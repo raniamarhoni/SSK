@@ -95,16 +95,16 @@ Once all the pages have been chosen and a design accepted, I then went to design
 * [Products search Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Products.pdf)
 * [Product Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20A%20Product.pdf)
 * [Shopping Bag Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Shopping%20Bag.pdf)
-* [Checkout Wireframe]()
-* [Order Confirmation Wireframe]()
-* [Contact Us Wireframe]()
-* [Add a Product Wireframe]()
-* [Edit a Product Wireframe]()
+* [Checkout Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Checkout.pdf)
+* [Order Confirmation Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Order%20Confirmation.pdf)
+* [Contact Us Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Contact%20Us.pdf)
+* [Add a Product Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Add%20a%20Product.pdf)
+* [Edit a Product Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Edit%20a%20Product.pdf)
 
 While designing I also created 2 wireframes which will no longer be created
 
-* [Payment Details Wireframe] ()
-* [Add a Card Wireframe] ()
+* [Payment Details Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Payment%20Details.pdf)
+* [Add a Card Wireframe](https://github.com/raniamarhoni/SSK/blob/7cd5e3d9d01c8827f42ea92e1a2b50e8d582977a/Readme_links/wireframes/SSK%20-%20Add%20a%20Card.pdf)
 
 ### Structure 
  
