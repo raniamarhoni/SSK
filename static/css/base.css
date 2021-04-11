@@ -12,6 +12,12 @@ body {
 
 /*----------COMMON CSS----------*/
 
+.center {
+    text-align:center;
+    width: fit-content;
+    margin: auto;
+}
+
 .extra-button-margin {
     margin: 20px auto;
 }
@@ -106,4 +112,26 @@ body {
     .shop-now-button {
        font-size: 35px; 
     }
+}
+
+/*---------- HEADER, NAV & BANNER----------*/
+
+.nav-logo {
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: black;
+}
+
+#delivery-banner {
+    padding-top: 80px;
+}
+
+.banner{
+    background: black;
+    color: white;
+    padding: 5px;
 }
