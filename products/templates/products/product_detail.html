@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-container"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-container my-5">
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-details-container mb-5 mt-md-5">
+                <h4 class="mb-2 fw-bold">{{ product.name }}</h4>
+                <div class="row">
+                    <div class="col-6">
+                        {% if product.size_set.all %}
+                            {% if product.size_set.all|length >= 2  %}
+                                <p class="mb-0 text-start"> £{{ min }} - £{{ max }}</p>
+                            {% else %}
+                                <p class="mb-0 text-start">£{{ min }}</p>
+                            {% endif %}
+                        {% else %}
+                            <p class="mb-0 text-start">item is out of stock</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-6">
+                        {% if product.rating %}
+                        <p class="mb-0 text-end"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
+                        {% else %}
+                        <p class="mb-0 text-end">No Rating</p>
+                        {% endif %}
+                    </div>
+                    {% if product.category %}
+                    <p class=" m-0">
+                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                            {{ product.category.friendly_name }}
+                        </a>    
+                    </p>
+                    {% endif %}
+                </div>
+                <p class="mt-3">{{ product.description }}</p>
+
+                        <div class="col-12">
+                            <p class="m-0 fw-bold">Quantity:</p>
+
+                            <div class="pt-3">
+                                {% for item in product.size_set.all %}
+                                    <a class="category-badge text-decoration-none bg-custom p-2 mx-1 text-light border border-dark" href="">
+                                        {{ item.size }} - £{{ item.price }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
