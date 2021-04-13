@@ -241,5 +241,9 @@ To go on the inspect section on google chrome I right clicked on the website and
 
 #### Bugs found in responsive design 
 
-**Banner not on laptop screen sizes**
-While testing the responsive design I found that the banner does not show on laptop screens as it was behind the nav therefore I deleted padding that was added on large screens and let it go back to its original  
+**Banner not shown on screen**
+While testing the responsive design I found that the banner foes not show first on mobile screens then when changed didn’t show on laptop screens as they were hidden behind the navbar there was changed to fix on all screens   
+
+### Validators 
+
+When a page has finished, I checked all the pages through a html validator to check for any mistakes 
