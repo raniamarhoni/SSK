@@ -26,6 +26,10 @@ body {
     border: 1px solid black !important;
 }
 
+.bg-custom {
+    background-color: #E19B74;
+}
+
 /*----------HEADERS----------*/
 
 .header-font {
@@ -134,6 +138,12 @@ body {
     background: black;
     color: white;
     padding: 5px;
+}
+
+/*---------- FOOTER ----------*/
+
+footer {
+    background: #E19B74;
 }
 
 /* -------------------------------- Media Queries */
