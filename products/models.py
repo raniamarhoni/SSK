@@ -24,6 +24,33 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    def get_avg_rating(self):
+        reviews = Review.objects.filter(product=self)
+        count = len(reviews)
+        sum = 0
+        for rvw in reviews:
+            sum += rvw.star
+        try:
+            return (sum/count)
+        except ZeroDivisionError:
+            return "No Rating"
+
+    def get_prices(self):
+        product_prices = Size.objects.filter(product=self)
+        count = len(product_prices)
+        if count == 0:
+            return "Out of Stock"
+        elif count == 1:
+            for prices in product_prices:
+                price = "£"+str(prices.price)
+                return price
+        else:
+            list = []
+            for prices in product_prices:
+                list.append(str(prices.price))
+            price = "£"+min(list)+" - £"+max(list)
+            return price
+
 
 class Size(models.Model):
     product = models.ForeignKey(
@@ -35,6 +62,7 @@ class Size(models.Model):
 
     def __str__(self):
         return self.size
+
 
 
 class Review(models.Model):

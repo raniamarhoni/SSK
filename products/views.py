@@ -82,10 +82,14 @@ def product_size(request, product_id, size_id):
 
     product = get_object_or_404(Product, pk=product_id)
     size = get_object_or_404(Size, pk=size_id)
+    reviews = Review.objects.filter(product=product_id)
+    average = reviews.aggregate(Avg('star'))['star__avg']
 
     context = {
         'product': product,
         'size': size,
+        'reviews': reviews,
+        'average': average,
     }
 
     return render(request, 'products/product_size.html', context)

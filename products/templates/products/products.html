@@ -65,21 +65,13 @@
                                 <div class="card-footer pt-0 border-0">
                                     <div class="row">
                                         <div class="col-6 h-25">
-                                            {% if product.variation_set.all %}
-                                                {% if product.variation_set.all|length >= 2  %}
-                                                    <p class="mb-0 text-start">£ - £</p>
-                                                {% else %}
-                                                    <p class="mb-0 text-start">£</p>
-                                                {% endif %}
-                                            {% else %}
-                                                <p class="mb-0 text-start">Out of stock</p>
-                                            {% endif %}
+                                            {{ product.get_prices }}
                                         </div>
                                         <div class="col-6 h-25">
                                             {% if product.rating %}
                                                 <p class="text-end mb-0"><i class="fas fa-star mr-1"></i>{{ product.rating  }} / 5</p>
                                             {% else %}
-                                                <p class="text-end">No Rating</p>
+                                                <p class="text-end">{{ product.get_avg_rating }}</p>
                                             {% endif %}
                                         </div>
                                          {% if product.category %}
