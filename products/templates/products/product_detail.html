@@ -69,4 +69,11 @@
         </div>
     </div>
 </div>
+{{ average|floatformat:1 }}
+ <div class="reviews">
+     {% for review in reviews %}
+        <p>{{ review.star}}</p>
+        <p>{{ review.review }}</p>
+     {% endfor %}
+ </div>
 {% endblock %}

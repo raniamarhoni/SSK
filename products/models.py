@@ -35,3 +35,14 @@ class Size(models.Model):
 
     def __str__(self):
         return self.size
+
+
+class Review(models.Model):
+    product = models.ForeignKey(
+        'Product', null=True, on_delete=models.SET_NULL)
+    star = models.DecimalField(max_digits=1, decimal_places=0)
+    review = models.TextField()
+    date_created = models.DateField()
+
+    def __str__(self):
+        return self.star

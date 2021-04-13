@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models import Avg, Max, Min, Sum
 from django.db.models.functions import Lower
-from .models import Product, Category, Size
+
+from .models import Product, Category, Size, Review
 
 
 # Create your views here.
@@ -63,9 +65,13 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product_id)
+    average = reviews.aggregate(Avg('star'))['star__avg']
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'average': average,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -83,4 +89,3 @@ def product_size(request, product_id, size_id):
     }
 
     return render(request, 'products/product_size.html', context)
- 
