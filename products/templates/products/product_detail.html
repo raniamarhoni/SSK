@@ -59,7 +59,7 @@
 
                             <div class="pt-3">
                                 {% for item in product.size_set.all %}
-                                    <a class="category-badge text-decoration-none bg-custom p-2 mx-1 text-light border border-dark" href="">
+                                    <a class="category-badge text-decoration-none bg-custom p-2 mx-1 text-light border border-dark" href="{% url 'product_size' product.id item.id %}">
                                         {{ item.size }} - £{{ item.price }}
                                     </a>
                                 {% endfor %}
