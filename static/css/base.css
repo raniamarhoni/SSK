@@ -2,12 +2,18 @@
 
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
     background: white;
     color: black;
     font-family: 'Abel', sans-serif;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 /*----------COMMON CSS----------*/
