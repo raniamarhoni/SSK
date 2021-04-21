@@ -59,24 +59,20 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
-                                <div class="card-body pb-0">
+                                <div class="card-body py-1 px-0">
                                     <p class="mb-0 fw-bold">{{ product.name }}</p>
                                 </div>
-                                <div class="card-footer pt-0 border-0">
+                                <div class="card-footer pt-0 px-0 border-0">
                                     <div class="row">
-                                        <div class="col-6 h-25">
-                                            {{ product.get_prices }}
+                                        <div class="col-8 h-25">
+                                            <p class="m-0">{{ product.get_prices }}</p>
                                         </div>
-                                        <div class="col-6 h-25">
-                                            {% if product.rating %}
-                                                <p class="text-end mb-0"><i class="fas fa-star mr-1"></i>{{ product.rating  }} / 5</p>
-                                            {% else %}
-                                                <p class="text-end">{{ product.get_avg_rating }}</p>
-                                            {% endif %}
+                                        <div class="col-4 h-25">
+                                            <p class="text-end m-0">{{ product.get_avg_rating }}</p>
                                         </div>
                                          {% if product.category %}
                                             <p class="small m-0">
-                                                <a class="text-muted" href="">
+                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                     {{ product.category.friendly_name }}
                                                 </a>
                                             </p>
@@ -90,10 +86,5 @@
             </div>
         </div>
     </div>
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-dark mx-auto my-auto"></i>
-        </a>	
-    </div>
 </div>
-{% endblock %} 
+{% endblock %}
