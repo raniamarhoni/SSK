@@ -68,7 +68,13 @@
                                             <p class="m-0">{{ product.get_prices }}</p>
                                         </div>
                                         <div class="col-4 h-25">
-                                            <p class="text-end m-0">{{ product.get_avg_rating }}</p>
+                                            <p class="text-end m-0">
+                                                {% if product.get_avg_rating == "No Rating" %}
+                                                    {{ product.get_avg_rating }}
+                                                {% else %}
+                                                    {{ product.get_avg_rating }} / 5
+                                                {% endif %}
+                                            </p>  
                                         </div>
                                          {% if product.category %}
                                             <p class="small m-0">

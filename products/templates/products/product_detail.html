@@ -27,22 +27,16 @@
                 <h4 class="mb-2 fw-bold">{{ product.name }}</h4>
                 <div class="row">
                     <div class="col-6">
-                        {% if product.size_set.all %}
-                            {% if product.size_set.all|length >= 2  %}
-                                <p class="mb-0 text-start"> £{{ min }} - £{{ max }}</p>
-                            {% else %}
-                                <p class="mb-0 text-start">£{{ min }}</p>
-                            {% endif %}
-                        {% else %}
-                            <p class="mb-0 text-start">item is out of stock</p>
-                        {% endif %}
+                        <p class="mb-0 text-start">{{ product.get_prices }}</p>
                     </div>
                     <div class="col-6">
-                        {% if product.rating %}
-                        <p class="mb-0 text-end"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
-                        {% else %}
-                        <p class="mb-0 text-end">No Rating</p>
-                        {% endif %}
+                        <p class="mb-0 text-end"><i class="fas fa-star mr-1"></i>
+                            {% if product.get_avg_rating == "No Rating" %}
+                                {{ product.get_avg_rating }}
+                            {% else %}
+                                {{ product.get_avg_rating }} / 5
+                            {% endif %}
+                        </p>
                     </div>
                     {% if product.category %}
                     <p class=" m-0">

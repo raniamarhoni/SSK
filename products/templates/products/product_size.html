@@ -31,11 +31,13 @@
                         <p class="mb-0 text-start"> £{{ size.price }}</p>
                     </div>
                     <div class="col-6">
-                        {% if product.rating %}
-                        <p class="mb-0 text-end"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
-                        {% else %}
-                        <p class="mb-0 text-end">No Rating</p>
-                        {% endif %}
+                        <p class="text-end m-0">
+                            {% if product.get_avg_rating == "No Rating" %}
+                                {{ product.get_avg_rating }}
+                            {% else %}
+                                {{ product.get_avg_rating }} / 5
+                            {% endif %}
+                        </p>
                     </div>
                     {% if product.category %}
                     <p class=" m-0">
@@ -56,17 +58,18 @@
 
 
                             <div class="py-3">
-                            {% for item in product.size_set.all %}
-                            <a class="category-badge text-decoration-none bg-custom p-2 mx-1 text-light border border-dark" href="{% url 'product_size' product.id item.id %}">
-                                {{ item.size }} - £{{ item.price }}
-                            </a>
-                            {% endfor %}
+                                {% for item in product.size_set.all %}
+                                <a class="category-badge text-decoration-none bg-custom p-2 mx-1 text-light border border-dark"
+                                    href="{% url 'product_size' product.id item.id %}">
+                                    {{ item.size }} - £{{ item.price }}
+                                </a>
+                                {% endfor %}
                             </div>
 
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-black rounded-0"
-                                        data-item_id="{{ size.id }}" id="decrement-qty_{{ size.id }}">
+                                    <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ size.id }}"
+                                        id="decrement-qty_{{ size.id }}">
                                         <span class="icon">
                                             <i class="fas fa-minus"></i>
                                         </span>
@@ -75,8 +78,8 @@
                                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
                                     max="99" data-item_id="{{ size.id }}" id="id_qty_{{ size.id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-black rounded-0"
-                                        data-item_id="{{ size.id }}" id="increment-qty_{{ size.id }}">
+                                    <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ size.id }}"
+                                        id="increment-qty_{{ size.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>
                                         </span>
