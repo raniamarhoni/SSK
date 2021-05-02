@@ -59,7 +59,7 @@ class Size(models.Model):
     sku = models.CharField(max_length=254, blank=True)
     size = models.CharField(max_length=25)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    stock = models.DecimalField(max_digits=6, decimal_places=0)
+    stock = models.IntegerField()
 
     def __str__(self):
         return self.size
@@ -68,9 +68,9 @@ class Size(models.Model):
 class Review(models.Model):
     product = models.ForeignKey(
         'Product', null=True, on_delete=models.SET_NULL)
-    star = models.DecimalField(max_digits=1, decimal_places=0)
+    star = models.IntegerField(null=True, blank=True)
     review = models.TextField()
     date_created = models.DateField()
 
     def __str__(self):
-        return self.star
+        return str(self.star)
